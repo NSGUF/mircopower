@@ -34,7 +34,7 @@ export default class ImageItem extends React.Component{
                 </div>
                 <div className="changeHead">
                     <input type="file" accept="image/jpeg,image/png,image/bmp"  {...this.props}
-                           value={this.state.value} onChange={this.handleChange} ref='addImg'/>
+                           value={this.state.value} onChange={this.handleChange.bind(this)} ref='addImg'/>
                 </div>
             </div>
         )

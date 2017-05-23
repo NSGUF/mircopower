@@ -11,18 +11,52 @@ import PublishButton from './component/publishButton'
 import Http from '../http'
 
 export default class Child extends React.Component {
+
+// <AddImage ref="img"/>
+    constructor(props) {
+        super(props);
+        this.state = {
+            target_amount: "",
+            divide_num: "",
+            list_title: "",
+            list_describe: "",
+            img: "",
+            flag: false
+        }
+    }
+
     handleSubmit(e) {
-        this.props.submit({
-            target_amount: this.refs.targetAmount.value,
-            divide_num: this.refs.targetNum.value,
-            list_title:this.refs.title.value,
-            list_describe:this.refs.describe.value,
-            img:this.refs.img.value
+        e.preventDefault()
+        Http.post("http://localhost:8080/MicroPower/MircoPowerReact",
+            this.state,
+            this.callBackFun.bind(this),
+            this.error.bind(this));
+        console.log(this.state)
+    }
+
+    handleAmountChange(e) {
+        this.setState({
+            target_amount: e.currentTarget.value
+        })
+    }
+
+    handleDivideChange(event) {
+        this.setState({
+            divide_num: event.target.value
+        });
+        console.log("divide:"+this.state.divide_num)
+    }
+
+    handleTitleChange(event) {
+        this.setState({
+            list_title: event.target.value
         });
     }
 
-    componentDidMount() {
-        Http.post("http://localhost:8080/MicroPower/MircoPowerReact", this.props.submit, this.callBackFun.bind(this), this.error);
+    handleDescribeChange(event) {
+        this.setState({
+            list_describe: event.target.value
+        });
     }
 
     callBackFun(result) {
@@ -34,27 +68,32 @@ export default class Child extends React.Component {
 
     error() {
         //alert("errror");
-        console.log(this.props.submit)
+        //console.log(this.props.submit)
     }
 
     render() {
         let options = [
             1, 2, 3, 4, 5, 6, 7, 8, 9, 10
         ]
-
+        let select = {
+            before: "共",
+            after: "期",
+            labelName: "分期期数",
+            ref: 'targetNum'
+        }
         return (
             <div>
                 <div className="item">
                     <h2 className="text-center">助力儿童</h2>
-                    <form className="form-horizontal publishForm"  onSubmit={this.handleSubmit()}>
+                    <form className="form-horizontal publishForm" enctype="multipart/form-data">
                         <div id="baseform" className="form-container">
-                            <Input labelName="目标金额" placeHolder="您想要筹多少钱？" ref='targetAmount'/>
-                            <Select before="共" after="期" options={options} labelName="分期期数" ref='targetNum'/>
-                            <Input labelName="筹款标题" placeHolder="填写筹款项目标题" ref="title"/>
-                            <TextArea placeHolder="建议详细描述受助人的基本情况：如家庭背景、经济状况、患病经历等。" ref='describe'/>
-                            <AddImage ref="img"/>
+                            <Input htmlFor="目标金额" placeholder="您想要筹多少钱？" onChange={this.handleAmountChange.bind(this)}/>
+                            <Select items={select} options={options} onChange={this.handleDivideChange.bind(this)}/>
+                            <Input htmlFor="筹款标题" placeholder="填写筹款项目标题？" onChange={this.handleTitleChange.bind(this)}/>
+                            <TextArea placeholder="建议详细描述受助人的基本情况：如家庭背景、经济状况、患病经历等。"
+                                      onChange={this.handleDescribeChange.bind(this)}/>
                         </div>
-                        <PublishButton />
+                        <PublishButton onClick={this.handleSubmit.bind(this)}/>
                     </form>
                 </div>
                 <Agreement />

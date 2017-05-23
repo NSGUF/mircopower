@@ -28,8 +28,8 @@ export default class TextArea extends React.Component {
         return (
             <div className="form-group form-group-lg">
                 <div className="col-md-9">
-                    <textarea cols="85" rows="10" name="donation_describe" placeholder={this.props.placeHolder}
-                              {...this.props} value={this.state.value} onChange={this.handleChange}></textarea>
+                    <textarea cols="85" rows="10" name="donation_describe" placeholder={this.props.placeholder}
+                              {...this.props} onChange={this.props.onChange}></textarea>
                     <div className="form-item help-block">
                         项目内容和项目图片禁止透露任何 <strong className="text-danger">联系方式</strong>和<strong
                         className="text-danger">银行卡</strong> 等收款款息,包括但不限于手机号码、座机号码、<br />

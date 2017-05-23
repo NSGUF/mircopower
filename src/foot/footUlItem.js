@@ -2,7 +2,7 @@
  * Created by ZhifengFang on 2017/4/11.
  */
 import React from 'react';
-import FootLiItem from './liItem';
+import LiItem from './liItem';
 export default class FootUlItem extends React.Component {
     render() {
         let id=0;
@@ -10,7 +10,7 @@ export default class FootUlItem extends React.Component {
         if (this.props.items.length !== 0) {
             this.props.items.forEach(
                 item => {
-                    items.push(<FootLiItem infoLink={item.infoLink} key={id++} infoName={item.infoName}/>);
+                    items.push(<LiItem infoLink={item.infoLink} key={id++} infoName={item.infoName}/>);
                 }
             );
         }
