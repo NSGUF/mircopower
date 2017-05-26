@@ -9,6 +9,7 @@
   "dependencies": {
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-fileupload": "^2.4.0",
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1"
   },

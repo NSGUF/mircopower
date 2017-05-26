@@ -26,7 +26,7 @@ export default class IsLogin extends React.Component {
     }
 
     error() {
-        //alert("errror");
+        alert("errror");
     }
 
     handleClick() {

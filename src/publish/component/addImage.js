@@ -4,9 +4,9 @@
 import React from 'react'
 import ImageItem from './imageItem'
 
-export default class AddImage extends React.Component{
-    render(){
-        return(
+export default class AddImage extends React.Component {
+    render() {
+        return (
             <div className="form-group form-group-lg">
                 <div className="col-md-9">
                     <div className="wjz-uploader clearfix">
@@ -14,7 +14,17 @@ export default class AddImage extends React.Component{
                         <div className="webPicPicker webuploader-container">
                             <div id="reviewPicker"
                                  className="webuploader-pick webuploader-pick-hover left">
-                                <ImageItem {...this.props}/>
+                                {this.props.all}
+                                <div className="user-avatar left">
+                                    <div className="user-avatar">
+                                        <img ref="img" alt="添加图片" src="images/publish/addImg.png"/>
+                                    </div>
+                                    <div className="changeHead">
+                                        <input type="file" accept="image/jpeg,image/png,image/bmp"
+                                               onChange={this.props.onChange}/>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>

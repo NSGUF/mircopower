@@ -4,9 +4,6 @@
 import React from 'react'
 
 export default class Agreement extends React.Component{
-    handleClick(){
-
-    }
     render(){
         return(
             <div>

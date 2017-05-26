@@ -4,13 +4,6 @@
 import OptionItem from './optionItem'
 import React from 'react'
 export default class Select extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: ''
-        }
-    }
-
     render() {
         let id = 0
         return (

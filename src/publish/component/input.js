@@ -4,12 +4,6 @@
 import React from 'react'
 
 export default class Input extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: ''
-        }
-    }
     render() {
         return (
             <div className="form-group form-group-lg">

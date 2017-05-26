@@ -4,26 +4,6 @@
 
 import React from 'react'
 export default class TextArea extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: ''
-        }
-    }
-
-
-    componentWillReceiveProps(nextProps) {
-        this.setState({
-            value: nextProps.value
-        })
-    }
-
-    handleChange(e) {
-        this.setState({
-            value: e.currentTarget.value
-        })
-    }
-
     render() {
         return (
             <div className="form-group form-group-lg">
