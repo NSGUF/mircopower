@@ -770,6 +770,38 @@ td, th {
     opacity: 0;
     display: inline-block;
 }
-.left{
-    float:left;
+
+.left {
+    float: left;
+}
+
+.img-circle {
+    margin-top: 80px;
+    margin-left: 500px;
+}
+
+.finish h2 {
+    margin-top: -50px;
+    color: #43ac43;
+    padding: 3em 0em 0em 0em;
+    font-size: 2em;
+    text-align: center;
+}
+
+.Login_other {
+    margin-top: 20px;
+    margin-left: 380px;
+}
+
+.Login_other ul li a {
+    margin-right: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    text-decoration: none;
+    padding-bottom: 10px;
+    border: solid 1px #6F7A7E;
+    border-radius: 24px;
+    background-color: white;
+    color: #6F7A7E;
 }

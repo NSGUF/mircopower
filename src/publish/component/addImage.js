@@ -2,7 +2,6 @@
  * Created by ZhifengFang on 2017/5/21.
  */
 import React from 'react'
-import ImageItem from './imageItem'
 
 export default class AddImage extends React.Component {
     render() {
