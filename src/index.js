@@ -18,6 +18,7 @@ import Publish from './publish/publish'
 import Login from './login'
 import Child from './publish/child'
 import Finish from './publish/finish'
+import Phone from './phone'
 
 
 var footInfo = [
@@ -70,6 +71,7 @@ ReactDOM.render(
                 <Route path='/login' component={Login}/>
                 <Route path='/child' component={Child}/>
                 <Route path='/finish' component={Finish}/>
+                <Route path='/phone' component={Phone}/>
             </Index>
         </HashRouter>
     ), document.getElementById('root'));

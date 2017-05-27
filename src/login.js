@@ -2,7 +2,7 @@
  * Created by ZhifengFang on 2017/5/17.
  */
 import React from 'react'
-
+import {Link} from 'react-router-dom'
 const Login = () => (
     <div id="Login">
         <div className="Logo">
@@ -17,8 +17,8 @@ const Login = () => (
         <div className="Login_other">
             <p>————————————或————————————</p>
             <ul>
-                <li><a href="/phone" target="_self">使用手机号码登录</a></li>
-                <li><a href="">使用微博账号登录</a></li>
+                <li><Link to="/phone">使用手机号码登录</Link></li>
+                <li><Link to="">使用微博账号登录</Link></li>
             </ul>
         </div>
     </div>

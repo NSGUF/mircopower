@@ -56,10 +56,10 @@ export default class IsLogin extends React.Component {
                     <li><a href="myProjects">我的项目</a></li>
                     <li><a href="myWallet">我的钱包</a></li>
                     <li><a href="setting">个人设置</a></li>
-                    <li><a href="login">退出</a></li>
+                    <li><a href="phone">退出</a></li>
                 </ul>);
         } else {
-            result.push(<Link to="/login" key={id++}>登录</Link>);
+            result.push(<Link to="/phone" key={id++}>登录</Link>);
         }
         return (
             <li key={id++}>
