@@ -2,19 +2,16 @@
  * Created by ZhifengFang on 2017/5/17.
  */
 import React from 'react'
-import Agreement from './component/agreement'
 import Input from './component/input'
 import Select from './component/select'
 import TextArea from './component/textarea'
 import AddImage from './component/addImage'
-import PublishButton from './component/publishButton'
 import Http from '../http'
 import ImageItem from './component/imageItem'
+import PublishButton from './component/publishButton'
 
 
 export default class Child extends React.Component {
-
-// <AddImage ref="img"/>
     constructor(props) {
         super(props);
         this.state = {
@@ -22,13 +19,23 @@ export default class Child extends React.Component {
             divide_num: "1",
             list_title: "",
             list_describe: "",
-            links: []
+            links: [],
+            minLinks:[]
         }
     }
 
     handleSubmit(e) {
+        if (this.state.target_amount === "") {
+            alert("请输入目标金额!")
+        } else if (this.state.list_title === "") {
+            alert("请输入标题!")
+        } else if (this.state.list_describe === "") {
+            alert("请输入详情!")
+        } else if (this.state.links.length === 0) {
+            alert("请选择图片!")
+        }
         e.preventDefault()
-        Http.post("http://localhost:8080/MicroPower/MircoPowerReact",
+        Http.post("http://localhost:8080/MicroPower/ChildServlet",
             this.state,
             this.callBackFun.bind(this),
             this.error.bind(this)
@@ -36,33 +43,66 @@ export default class Child extends React.Component {
         console.log(this.state)
     }
 
-    handleAmountChange(e) {
-        this.setState({
-            target_amount: e.currentTarget.value
-        })
+    handleChange(name, e) {
+        switch (name) {
+            case "amount":
+                e.target.value = e.target.value.replace(/\D/g, '')
+                if (e.target.value.substr(0, 1) === "0") {
+                    e.target.value = ""
+                }
+                if (Number(e.target.value) > 2000) {
+                    if (e.target.value.length === 5) {
+                        e.target.value = e.target.value.substr(0, 4)
+                    } else {
+                        e.target.value = e.target.value.substr(0, 3)
+                    }
+                    alert("请输入2000以内的数字")
+                }
+                this.setState({
+                    target_amount: e.target.value
+                })
+                break;
+            case "divide":
+                this.setState({
+                    divide_num: e.target.value
+                });
+                break;
+            case "title":
+                if (e.target.value.length >150) {
+                    e.target.value = e.target.value.substr(0, 150)
+                    alert("不能超过150")
+                }
+                this.setState({
+                    list_title: e.target.value
+                });
+                break;
+            case "describe":
+                if (e.target.value.length >500) {
+                    e.target.value = e.target.value.substr(0, 500)
+                }
+                this.setState({
+                    list_describe: e.target.value
+                });
+                break;
+            case "img":
+                e.preventDefault()
+                Http.post("http://localhost:8080/MicroPower/UploadImgServlet",
+                    e.target,
+                    this.callBackImg.bind(this),
+                    this.error.bind(this)
+                );
+                break;
+            default:
+                alert("child handleChange error")
+        }
+
     }
 
-    handleDivideChange(event) {
-        this.setState({
-            divide_num: event.target.value
-        });
-        console.log("divide:" + this.state.divide_num)
-    }
-
-    handleTitleChange(event) {
-        this.setState({
-            list_title: event.target.value
-        });
-    }
-
-    handleDescribeChange(event) {
-        this.setState({
-            list_describe: event.target.value
-        });
-    }
 
     callBackFun(result) {
-
+        if (result.flag === true) {
+            alert("发布成功！");
+        }
     }
 
     error() {
@@ -70,19 +110,11 @@ export default class Child extends React.Component {
         //console.log(this.props.submit)
     }
 
-    handleUploadImg(e) {
-        e.preventDefault()
-        Http.post("http://localhost:8080/MicroPower/UploadImgServlet",
-            e.target,
-            this.callBackImg.bind(this),
-            this.error.bind(this)
-        );
-    }
-
     callBackImg(result) {
         //http://localhost:8080/MicroPower/UploadImgServlet
         this.setState({
-            links: [...this.state.links, result.link]
+            links: [...this.state.links, result.link],
+            minLinks:[...this.state.minLinks,result.minLink]
         })
     }
 
@@ -96,19 +128,21 @@ export default class Child extends React.Component {
             labelName: "分期期数",
             ref: 'targetNum'
         }
-        let id=0
+        let id = 0
         return (
             <div>
                 <div className="item">
                     <h2 className="text-center">助力儿童</h2>
                     <form className="form-horizontal publishForm">
                         <div id="baseform" className="form-container">
-                            <Input htmlFor="目标金额" placeholder="您想要筹多少钱？" onChange={this.handleAmountChange.bind(this)}/>
-                            <Select items={select} options={options} onChange={this.handleDivideChange.bind(this)}/>
-                            <Input htmlFor="筹款标题" placeholder="填写筹款项目标题？" onChange={this.handleTitleChange.bind(this)}/>
+                            <Input htmlFor="目标金额" placeholder="您想要筹多少钱？2000以内"
+                                   onChange={this.handleChange.bind(this, "amount")}/>
+                            <Select items={select} options={options} onChange={this.handleChange.bind(this, "divide")}/>
+                            <Input htmlFor="筹款标题" placeholder="填写筹款项目标题？"
+                                   onChange={this.handleChange.bind(this, "title")}/>
                             <TextArea placeholder="建议详细描述受助人的基本情况：如家庭背景、经济状况、患病经历等。"
-                                      onChange={this.handleDescribeChange.bind(this)}/>
-                            <AddImage onChange={this.handleUploadImg.bind(this)} all={
+                                      onChange={this.handleChange.bind(this, "describe")}/>
+                            <AddImage onChange={this.handleChange.bind(this, "img")} all={
                                 this.state.links.map(link => (
                                     <ImageItem src={link} key={id++}/>
                                 ))
@@ -117,7 +151,6 @@ export default class Child extends React.Component {
                         <PublishButton onClick={this.handleSubmit.bind(this)}/>
                     </form>
                 </div>
-                <Agreement />
             </div>
         )
     }

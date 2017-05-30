@@ -537,7 +537,12 @@ a:hover {
 
 .phone {
     margin: 0px 300px;
-    padding-top: 130px;
+    padding-top: 80px;
+}
+
+.phone h2{
+    color: #43AC43;
+    text-align: center;
 }
 
 .phone-logo {
@@ -566,7 +571,7 @@ a:hover {
 }
 
 .phone_num {
-    padding: 10px 300px;
+    padding: 10px 180px;
 }
 
 .form-control1 {
@@ -596,9 +601,10 @@ a:hover {
     height: 40px;
     background: #43AC43;
     line-height: 30px;
-    width: 100px;
+    width: 90px;
+    margin-left: 10px;
     border-radius: 4px;
     border: 0px;
     color: #fff;
-    font-weight: bold;
+    font-size: 15px;
 }
