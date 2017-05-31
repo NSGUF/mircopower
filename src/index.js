@@ -19,6 +19,9 @@ import Login from './login'
 import Child from './publish/child'
 import Finish from './publish/finish'
 import Phone from './phone'
+import Donation from './publish/donation'
+import Need from './publish/need'
+import Share from './publish/share'
 
 
 var footInfo = [
@@ -72,6 +75,9 @@ ReactDOM.render(
                 <Route path='/child' component={Child}/>
                 <Route path='/finish' component={Finish}/>
                 <Route path='/phone' component={Phone}/>
+                <Route path='/donation' component={Donation}/>
+                <Route path='/need' component={Need}/>
+                <Route path='/share' component={Share}/>
             </Index>
         </HashRouter>
     ), document.getElementById('root'));

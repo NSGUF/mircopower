@@ -19,7 +19,7 @@ export default class AddImage extends React.Component {
                                         <img ref="img" alt="添加图片" src="images/publish/addImg.png"/>
                                     </div>
                                     <div className="changeHead">
-                                        <input type="file" accept="image/jpeg,image/png,image/bmp"
+                                        <input type="file" name="img" accept="image/jpeg,image/png,image/bmp"
                                                onChange={this.props.onChange}/>
                                     </div>
                                 </div>

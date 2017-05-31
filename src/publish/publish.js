@@ -40,18 +40,18 @@ export default class Publish extends React.Component{
                     <div className="item-drop">
                         <img src="images/publish/banner3.png" width="60px" height="60px" alt="分析见证"/><br />
                         <p>
-                            <Link to="/publish/share">分享见证</Link>
+                            <Link to="/share">分享见证</Link>
                         </p>
                     </div>
                     <div className="publish-center" id="center" style={re}>
                         <div className="triangle-center"></div>
                         <div className="banner-item">
-                            <li><Link to="/publish/donation">我要捐赠</Link></li>
+                            <li><Link to="/donation">我要捐赠</Link></li>
                             <br />
                             <p>绵薄物资，贡献大爱力量</p>
                         </div>
                         <div className="banner-item">
-                            <li><Link to="/publish/need">求助捐赠</Link></li>
+                            <li><Link to="/need">求助捐赠</Link></li>
                             <br />
                             <p>一丝关怀，驱散心中忧虑</p>
                         </div>

@@ -11,31 +11,31 @@ import ImageItem from './component/imageItem'
 import PublishButton from './component/publishButton'
 
 
-export default class Child extends React.Component {
+export default class Need extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            target_amount: "",
-            divide_num: "1",
-            list_title: "",
-            list_describe: "",
+            title: "",
+            trans_cost: "0",
+            raise_goods: "衣物",
+            close_date: "1",
+            describe: "",
             links: [],
-            minLinks:[]
+            minLinks: [],
+            need_or_dona:2
         }
     }
 
     handleSubmit(e) {
-        if (this.state.target_amount === "") {
-            alert("请输入目标金额!")
-        } else if (this.state.list_title === "") {
-            alert("请输入标题!")
-        } else if (this.state.list_describe === "") {
+        if (this.state.title === "") {
+            alert("请输入捐赠标题!")
+        } else if (this.state.describe === "") {
             alert("请输入详情!")
         } else if (this.state.links.length === 0) {
             alert("至少选择一张图片!")
         }
         e.preventDefault()
-        Http.post("http://localhost:8080/MicroPower/ChildServlet",
+        Http.post("http://localhost:8080/MicroPower/DonationServlet",
             this.state,
             this.callBackFun.bind(this),
             this.error.bind(this)
@@ -45,7 +45,17 @@ export default class Child extends React.Component {
 
     handleChange(name, e) {
         switch (name) {
-            case "amount":
+            case "title":
+                if (e.target.value.length > 150) {
+                    e.target.value = e.target.value.substr(0, 150)
+                    alert("请输入150以内的数字")
+                } else {
+                    this.setState({
+                        title: e.target.value
+                    })
+                }
+                break;
+            case "trans_cost":
                 e.target.value = e.target.value.replace(/\D/g, '')
                 if (e.target.value.substr(0, 1) === "0") {
                     e.target.value = ""
@@ -59,29 +69,25 @@ export default class Child extends React.Component {
                     alert("请输入2000以内的数字")
                 }
                 this.setState({
-                    target_amount: e.target.value
+                    trans_cost: e.target.value
+                });
+                break;
+            case "raise_goods":
+                this.setState({
+                    raise_goods: e.target.value
                 })
-                break;
-            case "divide":
+                break
+            case "close_date":
                 this.setState({
-                    divide_num: e.target.value
-                });
-                break;
-            case "title":
-                if (e.target.value.length >150) {
-                    e.target.value = e.target.value.substr(0, 150)
-                    alert("不能超过150")
-                }
-                this.setState({
-                    list_title: e.target.value
-                });
-                break;
+                    close_date: e.target.value
+                })
+                break
             case "describe":
-                if (e.target.value.length >500) {
+                if (e.target.value.length > 500) {
                     e.target.value = e.target.value.substr(0, 500)
                 }
                 this.setState({
-                    list_describe: e.target.value
+                    describe: e.target.value
                 });
                 break;
             case "img":
@@ -114,32 +120,43 @@ export default class Child extends React.Component {
         //http://localhost:8080/MicroPower/UploadImgServlet
         this.setState({
             links: [...this.state.links, result.link],
-            minLinks:[...this.state.minLinks,result.minLink]
+            minLinks: [...this.state.minLinks, result.minLink]
         })
     }
 
     render() {
-        let options = [
-            1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+        let optionsCost = [
+            '衣物', '玩具', '书本', '包', '其他'
         ]
-        let select = {
-            before: "共",
-            after: "期",
-            labelName: "分期期数"
+        let selectCost = {
+            before: "",
+            after: "",
+            labelName: "物品分类"
+        }
+        let optionsCloseDate = [
+            1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31
+        ]
+        let selectCloseDate = {
+            before: "",
+            after: "天后",
+            labelName: "截止时间"
         }
         let id = 0
         return (
             <div>
                 <div className="item">
-                    <h2 className="text-center">助力儿童</h2>
+                    <h2 className="text-center">求助捐赠</h2>
                     <form className="form-horizontal publishForm">
                         <div id="baseform" className="form-container">
-                            <Input htmlFor="目标金额" placeholder="您想要筹多少钱？2000以内"
-                                   onChange={this.handleChange.bind(this, "amount")}/>
-                            <Select items={select} options={options} onChange={this.handleChange.bind(this, "divide")}/>
-                            <Input htmlFor="筹款标题" placeholder="填写筹款标题（150字以内）"
+                            <Input htmlFor="捐赠标题" placeholder="填写捐赠标题"
                                    onChange={this.handleChange.bind(this, "title")}/>
-                            <TextArea placeholder="建议详细描述受助人的基本情况：如家庭背景、经济状况、患病经历等。（500字以内）"
+                            <Input htmlFor="回报金额" placeholder="不填表示不需要"
+                                   onChange={this.handleChange.bind(this, "trans_cost")}/>
+                            <Select items={selectCost} options={optionsCost}
+                                    onChange={this.handleChange.bind(this, "raise_goods")}/>
+                            <Select items={selectCloseDate} options={optionsCloseDate}
+                                    onChange={this.handleChange.bind(this, "close_date")}/>
+                            <TextArea placeholder="建议详细描述所捐赠物品的基本情况：如购买时间，使用情况等。"
                                       onChange={this.handleChange.bind(this, "describe")}/>
                             <AddImage onChange={this.handleChange.bind(this, "img")} all={
                                 this.state.links.map(link => (

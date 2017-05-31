@@ -11,7 +11,6 @@ export default class Select extends React.Component {
                 <label htmlFor={this.props.items.labelName}
                        className="col-md-1 control-label">{this.props.items.labelName}</label>
                 <div className="col-md-9 wjz-slider-row">
-
                     <div className="clearfix"></div>
                     <div className="wjz-slider clearfix">
                         {this.props.items.before}<strong id="liderVal">
