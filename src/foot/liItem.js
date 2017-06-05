@@ -12,7 +12,7 @@ export default class LiItem extends React.Component {
         let id = 0;
         return (
             <li key={id++}>
-                <Link  to={this.props.infoLink} onClick={this.handlerClick()}>
+                <Link to={this.props.infoLink} className={this.props.select?"active":""} onClick={this.handlerClick()}>
                     {this.props.infoName}
                 </Link>
             </li>

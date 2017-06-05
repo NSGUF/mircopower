@@ -22,6 +22,7 @@
 .top-nav ul {
     float: right;
     margin: 0.4em 0 0 0;
+    padding-left: 0;
 }
 
 .top-nav ul li {
