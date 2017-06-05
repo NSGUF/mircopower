@@ -22,6 +22,10 @@ import Phone from './phone'
 import Donation from './publish/donation'
 import Need from './publish/need'
 import Share from './publish/share'
+import ShowHelp from './show/help'
+import ShowBetter from './show/better'
+import ShowDonation from './show/donation'
+import ShowShare from './show/share'
 
 
 var footInfo = [
@@ -78,6 +82,10 @@ ReactDOM.render(
                 <Route path='/donation' component={Donation}/>
                 <Route path='/need' component={Need}/>
                 <Route path='/share' component={Share}/>
+                <Route path="/show/help" component={ShowHelp}/>
+                <Route path="/show/better" component={ShowBetter}/>
+                <Route path="/show/donation" component={ShowDonation}/>
+                <Route path="/show/share" component={ShowShare}/>
             </Index>
         </HashRouter>
     ), document.getElementById('root'));

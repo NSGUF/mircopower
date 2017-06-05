@@ -9,6 +9,7 @@ import AddImage from './component/addImage'
 import Http from '../http'
 import ImageItem from './component/imageItem'
 import PublishButton from './component/publishButton'
+import {browserHistory } from 'react-router-dom'
 
 
 export default class Child extends React.Component {
@@ -40,6 +41,7 @@ export default class Child extends React.Component {
             this.callBackFun.bind(this),
             this.error.bind(this)
         );
+
         console.log(this.state)
     }
 
@@ -103,6 +105,9 @@ export default class Child extends React.Component {
         if (result.flag === true) {
             alert("发布成功！");
         }
+        const path = `/finish`
+        //browserHistory.push(path)
+        this.context.router.push(path)
     }
 
     error() {

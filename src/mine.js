@@ -8,7 +8,7 @@ export default class Mine extends React.Component {
     render() {
         let mines = [
             {
-                infoLink: '/better',
+                infoLink: '/show/better',
                 infoName: '浏览项目'
             }, {
                 infoLink: '/publish',
