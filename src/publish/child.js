@@ -9,7 +9,7 @@ import AddImage from './component/addImage'
 import Http from '../http'
 import ImageItem from './component/imageItem'
 import PublishButton from './component/publishButton'
-
+import createHistory from 'history/createBrowserHistory'
 
 export default class Child extends React.Component {
     constructor(props) {
@@ -20,7 +20,7 @@ export default class Child extends React.Component {
             list_title: "",
             list_describe: "",
             links: [],
-            minLinks:[]
+            minLinks: []
         }
     }
 
@@ -69,7 +69,7 @@ export default class Child extends React.Component {
                 });
                 break;
             case "title":
-                if (e.target.value.length >150) {
+                if (e.target.value.length > 150) {
                     e.target.value = e.target.value.substr(0, 150)
                     alert("不能超过150")
                 }
@@ -78,7 +78,7 @@ export default class Child extends React.Component {
                 });
                 break;
             case "describe":
-                if (e.target.value.length >500) {
+                if (e.target.value.length > 500) {
                     e.target.value = e.target.value.substr(0, 500)
                 }
                 this.setState({
@@ -102,11 +102,10 @@ export default class Child extends React.Component {
 
     callBackFun(result) {
         if (result.flag === true) {
-            alert("发布成功！");
+            this.props.history.push("/finish")
+        }else{
+            alert("发布失败！")
         }
-        const path = `/finish`
-        //browserHistory.push(path)
-        this.context.router.push(path)
     }
 
     error() {
@@ -118,7 +117,7 @@ export default class Child extends React.Component {
         //http://localhost:8080/MicroPower/UploadImgServlet
         this.setState({
             links: [...this.state.links, result.link],
-            minLinks:[...this.state.minLinks,result.minLink]
+            minLinks: [...this.state.minLinks, result.minLink]
         })
     }
 

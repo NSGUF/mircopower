@@ -4,7 +4,7 @@
 import React from 'react';
 import Foot from './foot';
 import Mine from './mine';
-import {HashRouter, Route, hashHistory} from 'react-router-dom';
+import {HashRouter,  Route} from 'react-router-dom';
 import ReactDOM from 'react-dom'
 import About from './foot/about'
 import Connect from './foot/connect'
@@ -28,7 +28,7 @@ import ShowDonation from './show/donation'
 import ShowShare from './show/share'
 import AppLoad from './foot/appLoad'
 import Setting from './my/setting'
-
+import HelpDetail from './show/helpDetail'
 
 var footInfo = [
     {infoHead: "信息", infoDetail: [{infoLink: "http://jwc.jxnu.edu.cn", infoName: "江西师范大学"}]},
@@ -66,7 +66,7 @@ class Index extends React.Component {
     }
 }
 ReactDOM.render(
-    (<HashRouter history={hashHistory}>
+    (<HashRouter>
             <Index>
                 <Route exact path="/" component={Middle}/>
                 <Route path='/foot/about' component={About}/>
@@ -88,6 +88,7 @@ ReactDOM.render(
                 <Route path="/show/better" component={ShowBetter}/>
                 <Route path="/show/donation" component={ShowDonation}/>
                 <Route path="/show/share" component={ShowShare}/>
+                <Route path="/help/detail/:id" component={HelpDetail}/>
                 <Route path="/app" component={AppLoad}/>
 
                 <Route path="/my/setting" component={Setting}/>

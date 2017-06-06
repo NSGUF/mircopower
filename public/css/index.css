@@ -246,6 +246,115 @@ h2 {
     padding-top: 80px;
 }
 
+.foot-banner .row {
+    margin-bottom: 10px;
+}
+
+.mydetails {
+    height: 500px;
+    padding: 5px;
+    color: #6F7A7E;
+    background: #fff;
+    border: 1px solid #EEEEEE;
+}
+
+.mydetails span {
+    margin-left: 40px;
+    color: #999999;
+}
+
+.mydetails .item-info {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 19px;
+    background: #fff;
+    float: left;
+}
+
+.mydetails .item-info strong {
+    color: #43AC43;
+    margin-left: 10px;
+}
+
+.mydetails img {
+    width: 70px;
+    height: 70px;
+}
+
+.mydetails .item1 {
+    margin-top: -8px;
+    width: 100%;
+    font-size: 19px;
+    background: #fff;
+    float: left;
+}
+
+.mydetails .item1 img {
+    width: 120px;
+    height: 120px;
+}
+
+.mydetails .item1 .itemsun {
+    float: right;
+    margin-top: 35px;
+    width: 60%;
+}
+
+.mydetails .item1 strong {
+    color: #43AC43;
+    margin-left: 10px;
+}
+
+.myskills a {
+    margin-top: -3px;
+    margin-left: 10px;
+    color: #fff;
+    background: #43AC43;
+    border-radius: 50px;
+    display: block;
+    font-size: 1em;
+    width: 140px;
+    font-weight: 400;
+    padding: 0.4em 1.5em;
+    text-decoration: none;
+}
+
+.myskills .content-text {
+    width: 730px;
+    margin-left: 10px;
+    background: #fff;
+    padding: 10px;
+}
+
+.myskills img {
+    width: 730px;
+    margin: 10px;
+}
+
+.myskills .itemskills {
+    width: 100%;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    background: #fff;
+    padding: 10px;
+}
+
+.myskills .itemskills p {
+    margin: 10px;
+    color: #6F7A7E;
+}
+
+.myskills .itemskills p {
+    margin: 10px;
+    color: #6F7A7E;
+}
+
+.box1 {
+    height: 130px;
+    font-weight: bold;
+    padding-top: 14px;
+}
+
 .foot-h2 {
     margin-top: 40px;
     margin-bottom: 40px;
@@ -471,6 +580,12 @@ a:hover {
     width: 150px;
 }
 
+#reviewPicker .user-avatar img {
+    width: 120px;
+    height: 120px;
+    margin: 0px;
+}
+
 .user-avatar {
     margin-left: 0px;
     width: 120px;
@@ -508,6 +623,9 @@ a:hover {
     padding: 3em 0em 0em 0em;
     font-size: 2em;
     text-align: center;
+}
+.finish img{
+    margin: 40px auto;
 }
 
 .Login_other {

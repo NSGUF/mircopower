@@ -107,7 +107,9 @@ export default class Donation extends React.Component {
 
     callBackFun(result) {
         if (result.flag === true) {
-            alert("发布成功！");
+            this.props.history.push("/finish")
+        }else{
+            alert("发布失败")
         }
     }
 

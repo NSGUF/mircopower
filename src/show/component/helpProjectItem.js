@@ -2,15 +2,17 @@
  * Created by ZhifengFang on 2017/6/3.
  */
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 export default class ProjectItem extends React.Component {
 
     render() {
+        let link="/help/detail/"+this.props.project.id
         return (
             <div className="col-1-3">
                 <div className="wrap-col">
                     <div className="post">
-                        <a href="showProjectDetail.jsp?mircolove_id=" className="mask">
+                        <Link to={link} className="mask">
                             <img src={this.props.project.image.split(" ")[0]} alt={this.props.project.title}/>
                             <div className="upload">
                                 <div className="mypeople">
@@ -31,7 +33,7 @@ export default class ProjectItem extends React.Component {
                                     已有<strong>{this.props.project.support_time}</strong>人支持
                                 </p>
                             </div>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

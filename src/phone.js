@@ -54,6 +54,7 @@ export default class Phone extends React.Component {
             case "login":
                 if (this.state.validate === this.state.fillValidate) {
                     alert("登录成功")
+                    this.props.history.push("/index")
                 }else{
                     alert("验证码输入错误")
                 }

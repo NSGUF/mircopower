@@ -46,7 +46,7 @@ export default class Share extends React.Component {
                     alert("不能超过150")
                 }
                 this.setState({
-                    list_title: e.target.value
+                    title: e.target.value
                 });
                 break;
             case "describe":
@@ -74,8 +74,11 @@ export default class Share extends React.Component {
 
     callBackFun(result) {
         if (result.flag === true) {
-            alert("发布成功！");
+            this.props.history.push("/finish")
+        }else{
+            alert("发布失败！")
         }
+
     }
 
     error() {

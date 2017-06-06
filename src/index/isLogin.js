@@ -23,7 +23,7 @@ export default class IsLogin extends React.Component {
     close(e) {
         this.setState({dp: false});
     }
-    
+
     callBackFun(result) {
         this.setState({
             flag: result.flag,
