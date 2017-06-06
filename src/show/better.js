@@ -35,28 +35,9 @@ export default class Better extends React.Component {
     }
 
     render() {
-        let mines = [
-            {
-                infoLink: '/show/better',
-                infoName: '精选项目',
-                select: true
-            }, {
-                infoLink: '/show/help',
-                infoName: '助力儿童',
-                select: false
-            }, {
-                infoLink: '/show/donation',
-                infoName: '微捐赠',
-                select: false
-            }, {
-                infoLink: '/show/share',
-                infoName: '分享见证',
-                select: false
-            },
-        ]
         return (
             <div className="publish-banner">
-                <Nav mines={mines}/>
+                <Nav/>
                 <div className="container">
                     <div className="content-box boxstyle-1 box-1">
                         <Projects projects={this.state.projects}/>

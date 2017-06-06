@@ -1,5 +1,5 @@
 /**
- * Created by ZhifengFang on 2017/6/3.
+ * Created by ZhifengFang on 2017/6/6.
  */
 import React from 'react';
 import LiItem from '../../foot/liItem'
@@ -10,32 +10,24 @@ export default class Nav extends React.Component {
 
         let mines = [
             {
-                infoLink: '/show/better',
-                infoName: '精选项目'
+                infoLink: '/my/setting',
+                infoName: '个人资料'
             }, {
-                infoLink: '/show/help',
-                infoName: '助力儿童'
+                infoLink: '/my/receive',
+                infoName: '收件地址'
             }, {
-                infoLink: '/show/donation',
-                infoName: '微捐赠'
-            }, {
-                infoLink: '/show/share',
-                infoName: '分享见证'
-            },
+                infoLink: '/my/card',
+                infoName: '银行卡'
+            }
         ]
         return (
-            <div key={id++}>
-                <div className="container">
-                    <div className="clearfix"></div>
-                    <div className="top-nav">
-                        <div className="menu">
-                            <ul id="nav">
-                                {mines.map((mine) => (
-                                    <LiItem infoLink={mine.infoLink} infoName={mine.infoName} key={id++}/>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
+            <div className="top-nav" key={id++}>
+                <div className="menu">
+                    <ul id="nav">
+                        {mines.map((mine) => (
+                            <LiItem infoLink={mine.infoLink} infoName={mine.infoName} key={id++}/>
+                        ))}
+                    </ul>
                 </div>
             </div>
         );

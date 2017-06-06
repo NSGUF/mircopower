@@ -26,6 +26,8 @@ import ShowHelp from './show/help'
 import ShowBetter from './show/better'
 import ShowDonation from './show/donation'
 import ShowShare from './show/share'
+import AppLoad from './foot/appLoad'
+import Setting from './my/setting'
 
 
 var footInfo = [
@@ -86,6 +88,9 @@ ReactDOM.render(
                 <Route path="/show/better" component={ShowBetter}/>
                 <Route path="/show/donation" component={ShowDonation}/>
                 <Route path="/show/share" component={ShowShare}/>
+                <Route path="/app" component={AppLoad}/>
+
+                <Route path="/my/setting" component={Setting}/>
             </Index>
         </HashRouter>
     ), document.getElementById('root'));
