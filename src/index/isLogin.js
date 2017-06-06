@@ -14,10 +14,16 @@ export default class IsLogin extends React.Component {
         }
     }
 
+
     componentDidMount() {
+        document.body.addEventListener('click', this.close.bind(this), false);
         Http.post(this.props.source, {name: "name"}, this.callBackFun.bind(this), this.error);
     }
 
+    close(e) {
+        this.setState({dp: false});
+    }
+    
     callBackFun(result) {
         this.setState({
             flag: result.flag,
@@ -29,8 +35,9 @@ export default class IsLogin extends React.Component {
         alert("errror");
     }
 
-    handleClick() {
-        this.setState({dp: !this.state.dp});
+    handleClick(e) {
+        e.nativeEvent.stopImmediatePropagation();
+        this.setState({dp: true});
     }
 
     getStyles() {
@@ -45,7 +52,7 @@ export default class IsLogin extends React.Component {
 
     render() {
         let result = [];
-        let id=0;
+        let id = 0;
         if (this.state.flag === true) {
             result.push(
                 <img className="img-circle" src={this.state.userHeadUrl} onClick={this.handleClick.bind(this)}
@@ -53,10 +60,10 @@ export default class IsLogin extends React.Component {
             );
             result.push(
                 <ul id="nav-little" style={this.getStyles()} key={id++}>
-                    <li><a href="myProjects">我的项目</a></li>
-                    <li><a href="myWallet">我的钱包</a></li>
-                    <li><a href="setting">个人设置</a></li>
-                    <li><a href="phone">退出</a></li>
+                    <li><Link to="/my/projects">我的项目</Link></li>
+                    <li><Link to="/my/wallet">我的钱包</Link></li>
+                    <li><Link to="/my/setting">个人设置</Link></li>
+                    <li><Link to="/phone">退出</Link></li>
                 </ul>);
         } else {
             result.push(<Link to="/phone" key={id++}>登录</Link>);
