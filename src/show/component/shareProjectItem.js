@@ -2,15 +2,16 @@
  * Created by ZhifengFang on 2017/6/3.
  */
 import React from 'react'
-
+import {Link} from 'react-router-dom'
 export default class ProjectItem extends React.Component {
 
     render() {
+        let link = "/right/detail/" + this.props.project.id
         return (
             <div className="col-1-3">
                 <div className="wrap-col">
                     <div className="post">
-                        <a href="" className="mask">
+                        <Link to={link} className="mask">
                             <img src={this.props.project.image.split(" ")[0]} alt={this.props.project.title}/>
                             <div className="upload">
                                 <div className="mypeople">
@@ -25,7 +26,7 @@ export default class ProjectItem extends React.Component {
                                 </p>
 
                             </div>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

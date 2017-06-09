@@ -29,6 +29,9 @@ import ShowShare from './show/share'
 import AppLoad from './foot/appLoad'
 import Setting from './my/setting'
 import HelpDetail from './show/helpDetail'
+import DonationDetail from './show/donationDetail'
+import ShareDetail from './show/shareDetail'
+import MyProjects from './my/projects'
 
 var footInfo = [
     {infoHead: "信息", infoDetail: [{infoLink: "http://jwc.jxnu.edu.cn", infoName: "江西师范大学"}]},
@@ -89,9 +92,11 @@ ReactDOM.render(
                 <Route path="/show/donation" component={ShowDonation}/>
                 <Route path="/show/share" component={ShowShare}/>
                 <Route path="/help/detail/:id" component={HelpDetail}/>
+                <Route path="/contribute/detail/:id" component={DonationDetail}/>
+                <Route path="/right/detail/:id" component={ShareDetail}/>
                 <Route path="/app" component={AppLoad}/>
-
                 <Route path="/my/setting" component={Setting}/>
+                <Route path="/my/projects" component={MyProjects}/>
             </Index>
         </HashRouter>
     ), document.getElementById('root'));

@@ -4,22 +4,16 @@
 import React from 'react';
 import LiItem from '../../foot/liItem'
 
-export default class Nav extends React.Component {
+export default class SettingNav extends React.Component {
     render() {
         let id = 0;
         let mines = [
             {
-                infoLink: '/my/projects',
-                infoName: '全部'
+                infoLink: '/my/setting',
+                infoName: '个人资料'
             }, {
-                infoLink: '/my/success',
-                infoName: '已成功'
-            }, {
-                infoLink: '/my/going',
-                infoName: '进行中'
-            }, {
-                infoLink: '/my/fail',
-                infoName: '失败'
+                infoLink: '/my/receive',
+                infoName: '收件地址'
             }
         ]
         return (

@@ -2,15 +2,16 @@
  * Created by ZhifengFang on 2017/6/3.
  */
 import React from 'react'
-
+import {Link} from 'react-router-dom'
 export default class ProjectItem extends React.Component {
 
     render() {
+        let link="/contribute/detail/"+this.props.project.id
         return (
             <div className="col-1-3">
                 <div className="wrap-col">
                     <div className="post">
-                        <a className="mask" href="">
+                        <Link className="mask" to={link}>
                             <img src={this.props.project.image.split(" ")[0]} alt={this.props.project.title}/>
                             <div className="upload">
                                 <div className="mypeople">
@@ -27,7 +28,7 @@ export default class ProjectItem extends React.Component {
                                     {this.props.project.select_need_or_dona ? "我要捐赠" : "求助捐赠"} 已有<strong>0</strong>人评价
                                 </p>
                             </div>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div >

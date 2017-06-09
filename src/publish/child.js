@@ -9,7 +9,6 @@ import AddImage from './component/addImage'
 import Http from '../http'
 import ImageItem from './component/imageItem'
 import PublishButton from './component/publishButton'
-import createHistory from 'history/createBrowserHistory'
 
 export default class Child extends React.Component {
     constructor(props) {

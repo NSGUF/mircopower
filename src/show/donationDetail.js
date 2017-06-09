@@ -5,7 +5,7 @@ import React from 'react'
 //import Comment from './component/comment'
 import Http from '../http'
 
-export default class HelpDetail extends React.Component {
+export default class DonationDetail extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -13,9 +13,9 @@ export default class HelpDetail extends React.Component {
             user_head: "",
             user_name: "",
             open_date: "",
-            target_amount: "",
-            raise_amount: "",
-            support_time: "",
+            trans_cost: "",
+            raise_goods: "",
+            select_need_or_dona: "",
             describe: "",
             image: "",
             content: []
@@ -24,7 +24,7 @@ export default class HelpDetail extends React.Component {
 
     componentDidMount() {
         Http.post("http://localhost:8080/MicroPower/DetailServlet", {
-            flag: "help",
+            flag: "donation",
             id: this.props.match.params.id
         }, this.callBackFun.bind(this), this.error);
     }
@@ -35,9 +35,9 @@ export default class HelpDetail extends React.Component {
             user_head: result.user_head,
             user_name: result.user_name,
             open_date: result.open_date,
-            target_amount: result.target_amount,
-            raise_amount: result.raise_amount,
-            support_time: result.support_time,
+            trans_cost: result.trans_cost,
+            raise_goods: result.raise_goods,
+            select_need_or_dona: result.select_need_or_dona,
             describe: result.describe,
             image: result.image
         })
@@ -49,7 +49,7 @@ export default class HelpDetail extends React.Component {
         return (
             <div className="foot-banner">
                 <div className="container">
-                    <div className="clearfix"></div>
+                    <div className="box"></div>
                     <div className="box1">
                         <h2>{this.state.title}</h2>
                     </div>
@@ -63,22 +63,20 @@ export default class HelpDetail extends React.Component {
                                 <span>{this.state.open_date}</span>
                                 <hr/>
                                 <div className="item-info col-md-6">
-                                    <strong>{this.state.target_amount}
-                                        <small>元</small>
-                                    </strong>
-                                    <p>目标金额</p>
+                                    <strong>{this.state.raise_goods}</strong>
+                                    <p>物品分类</p>
                                 </div>
                                 <div className="item-info col-md-6">
-                                    <strong>{this.state.raise_amount}
+                                    <strong>{this.state.trans_cost}
                                         <small>元</small>
                                     </strong>
-                                    <p>已筹金额</p>
+                                    <p>回报金额</p>
                                 </div>
                                 <div className="item-info col-md-6">
-                                    <strong>{this.state.support_time}
-                                        <small>人</small>
+                                    <strong>0
+                                        <small>次</small>
                                     </strong>
-                                    <p>支持人数</p>
+                                    <p>评论次数</p>
                                     <hr/>
                                 </div>
                                 <div className="item-info col-md-6">

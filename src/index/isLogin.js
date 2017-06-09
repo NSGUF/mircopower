@@ -61,7 +61,6 @@ export default class IsLogin extends React.Component {
             result.push(
                 <ul id="nav-little" style={this.getStyles()} key={id++}>
                     <li><Link to="/my/projects">我的项目</Link></li>
-                    <li><Link to="/my/wallet">我的钱包</Link></li>
                     <li><Link to="/my/setting">个人设置</Link></li>
                     <li><Link to="/phone">退出</Link></li>
                 </ul>);

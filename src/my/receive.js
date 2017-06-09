@@ -1,11 +1,11 @@
 /**
- * Created by ZhifengFang on 2017/6/6.
+ * Created by ZhifengFang on 2017/6/8.
  */
 import React from 'react'
-import Nav from './component/settingNav'
+import Nav from './component/nav'
 import Http from '../http'
 
-export default class Setting extends React.Component {
+export default class Receive extends React.Component {
     constructor(props) {
         super(props)
 
@@ -117,7 +117,6 @@ export default class Setting extends React.Component {
                         </table>
                     </form>
                 </div>
-                <hr/>
             </div>
         )
     }
