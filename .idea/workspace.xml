@@ -2,24 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd663f96-9109-4e51-a8f4-bc4ab7b57359" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Quit.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/my/addReceive.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/my/volunteer.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Quit.js" afterPath="$PROJECT_DIR$/src/quit.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/index.css" afterPath="$PROJECT_DIR$/public/css/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/foot/help.js" afterPath="$PROJECT_DIR$/src/foot/help.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index/isLogin.js" afterPath="$PROJECT_DIR$/src/index/isLogin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mine.js" afterPath="$PROJECT_DIR$/src/mine.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/my/component/donation.js" afterPath="$PROJECT_DIR$/src/my/component/donation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/my/component/help.js" afterPath="$PROJECT_DIR$/src/my/component/help.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/my/component/share.js" afterPath="$PROJECT_DIR$/src/my/component/share.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/my/receive.js" afterPath="$PROJECT_DIR$/src/my/receive.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/phone.js" afterPath="$PROJECT_DIR$/src/phone.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/publish/child.js" afterPath="$PROJECT_DIR$/src/publish/child.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/publish/donation.js" afterPath="$PROJECT_DIR$/src/publish/donation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/publish/need.js" afterPath="$PROJECT_DIR$/src/publish/need.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/publish/share.js" afterPath="$PROJECT_DIR$/src/publish/share.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -43,8 +29,8 @@
       <file leaf-file-name="receive.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/my/receive.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-181">
-              <caret line="31" column="16" lean-forward="false" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+            <state relative-caret-position="280">
+              <caret line="16" column="70" lean-forward="false" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="70" />
               <folding>
                 <element signature="e#47#72#0" expanded="true" />
                 <element signature="e#657#702#0" expanded="false" />
@@ -53,40 +39,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addReceive.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/my/addReceive.js">
+      <file leaf-file-name="quit.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/quit.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="748" column="81" lean-forward="false" selection-start-line="748" selection-start-column="81" selection-end-line="748" selection-end-column="81" />
+            <state relative-caret-position="380">
+              <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
               <folding>
-                <element signature="e#47#72#0" expanded="true" />
-                <element signature="e#736#5198#0" expanded="false" />
-                <element signature="e#5230#38208#0" expanded="false" />
-                <element signature="e#38230#39200#0" expanded="false" />
-                <element signature="e#40761#40842#0" expanded="false" />
-                <element signature="e#40999#41037#0" expanded="false" />
+                <element signature="e#48#73#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="help.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/foot/help.js">
+      <file leaf-file-name="mine.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mine.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="505">
-              <caret line="33" column="13" lean-forward="false" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+            <state relative-caret-position="325">
+              <caret line="39" column="36" lean-forward="false" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#48#74#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Quit.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Quit.js">
+      <file leaf-file-name="isLogin.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/index/isLogin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="305">
+              <caret line="68" column="13" lean-forward="true" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -112,16 +93,6 @@
               <folding>
                 <element signature="e#47#72#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="help.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/my/component/help.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="54" column="33" lean-forward="false" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="33" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -221,7 +192,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/publish/component/addImage.js" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/publish/finish.js" />
         <option value="$PROJECT_DIR$/src/login.js" />
@@ -255,10 +225,8 @@
         <option value="$PROJECT_DIR$/src/my/component/nav.js" />
         <option value="$PROJECT_DIR$/src/my/component/settingNav.js" />
         <option value="$PROJECT_DIR$/src/my/setting.js" />
-        <option value="$PROJECT_DIR$/src/index/isLogin.js" />
         <option value="$PROJECT_DIR$/src/my/volunteer.js" />
         <option value="$PROJECT_DIR$/src/phone.js" />
-        <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/mine.js" />
         <option value="$PROJECT_DIR$/src/publish/child.js" />
         <option value="$PROJECT_DIR$/src/publish/donation.js" />
@@ -272,6 +240,9 @@
         <option value="$PROJECT_DIR$/src/my/addReceive.js" />
         <option value="$PROJECT_DIR$/src/foot/help.js" />
         <option value="$PROJECT_DIR$/src/Quit.js" />
+        <option value="$PROJECT_DIR$/src/index/isLogin.js" />
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/quit.js" />
       </list>
     </option>
   </component>
@@ -332,6 +303,42 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mircopower" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mircopower" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="publish" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mircopower" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mircopower" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="my" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -490,12 +497,12 @@
       <workItem from="1496846414100" duration="2325000" />
       <workItem from="1496880538343" duration="17659000" />
       <workItem from="1496993270241" duration="11061000" />
-      <workItem from="1497057151658" duration="7693000" />
+      <workItem from="1497057151658" duration="8448000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="198129000" />
+    <option name="totallyTimeSpent" value="198884000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -749,46 +756,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="23" column="10" lean-forward="true" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/my/volunteer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1340">
-          <caret line="101" column="30" lean-forward="false" selection-start-line="101" selection-start-column="30" selection-end-line="101" selection-end-column="44" />
-          <folding>
-            <element signature="e#48#74#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index/isLogin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-915">
-          <caret line="7" column="21" lean-forward="false" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mine.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="33" column="97" lean-forward="false" selection-start-line="33" selection-start-column="97" selection-end-line="33" selection-end-column="97" />
-          <folding>
-            <element signature="e#48#74#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -826,16 +798,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/publish/share.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="102" column="52" lean-forward="false" selection-start-line="102" selection-start-column="52" selection-end-line="102" selection-end-column="52" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
@@ -864,24 +826,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/my/projects.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="67" column="30" lean-forward="true" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
-          <folding>
-            <element signature="e#47#72#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/my/component/help.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="54" column="33" lean-forward="false" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/my/component/donation.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="385">
@@ -906,23 +850,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/my/receive.js">
+    <entry file="file://$PROJECT_DIR$/src/my/component/help.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-181">
-          <caret line="31" column="16" lean-forward="false" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+        <state relative-caret-position="1000">
+          <caret line="54" column="33" lean-forward="false" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/my/projects.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="67" column="30" lean-forward="true" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
           <folding>
             <element signature="e#47#72#0" expanded="true" />
-            <element signature="e#657#702#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/my/addReceive.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
+        <state relative-caret-position="1220">
           <caret line="748" column="81" lean-forward="false" selection-start-line="748" selection-start-column="81" selection-end-line="748" selection-end-column="81" />
           <folding>
-            <element signature="e#47#72#0" expanded="true" />
+            <element signature="e#47#72#0" expanded="false" />
             <element signature="e#736#5198#0" expanded="false" />
             <element signature="e#5230#38208#0" expanded="false" />
             <element signature="e#38230#39200#0" expanded="false" />
@@ -937,16 +888,73 @@
         <state relative-caret-position="505">
           <caret line="33" column="13" lean-forward="false" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Quit.js">
+    <entry file="file://$PROJECT_DIR$/src/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="400">
+          <caret line="23" column="10" lean-forward="true" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mine.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="39" column="36" lean-forward="false" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
+          <folding>
+            <element signature="e#48#74#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="104" column="54" lean-forward="false" selection-start-line="104" selection-start-column="54" selection-end-line="104" selection-end-column="54" />
+          <folding>
+            <element signature="e#48#74#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index/isLogin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="68" column="13" lean-forward="true" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/my/receive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="16" column="70" lean-forward="false" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="70" />
+          <folding>
+            <element signature="e#47#72#0" expanded="true" />
+            <element signature="e#657#702#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/publish/share.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="76" column="46" lean-forward="true" selection-start-line="76" selection-start-column="12" selection-end-line="76" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/quit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+          <folding>
+            <element signature="e#48#73#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

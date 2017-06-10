@@ -34,6 +34,7 @@ import ShareDetail from './show/shareDetail'
 import MyProjects from './my/projects'
 import AddReceive from './my/addReceive'
 import Receive from './my/receive'
+import Quit from './quit'
 
 var footInfo = [
     {infoHead: "信息", infoDetail: [{infoLink: "http://jwc.jxnu.edu.cn", infoName: "江西师范大学"}]},
@@ -101,6 +102,7 @@ ReactDOM.render(
                 <Route path="/my/projects" component={MyProjects}/>
                 <Route path="/my/add/receive" component={AddReceive}/>
                 <Route path="/my/receive" component={Receive}/>
+                <Route path="/quit" component={Quit}/>
             </Index>
         </HashRouter>
     ), document.getElementById('root'));
