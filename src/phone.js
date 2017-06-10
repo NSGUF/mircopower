@@ -52,17 +52,24 @@ export default class Phone extends React.Component {
                 }
                 break;
             case "login":
-                if (this.state.validate === this.state.fillValidate) {
+                if (/^1[3|4|5|7|8][0-9]{9}$/.test(this.state.tellphone)) {
+                    alert("手机号码格式不正确！")
+                } else if (this.state.validate === this.state.fillValidate) {
                     alert("登录成功")
                     this.props.history.push("/index")
-                }else{
+                } else {
                     alert("验证码输入错误")
                 }
                 break;
             default:
                 alert("handlerClick error")
         }
-        console.log(this.state)
+
+        console
+            .log(
+                this
+                    .state
+            )
     }
 
     callBack(result) {

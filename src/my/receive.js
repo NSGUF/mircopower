@@ -2,31 +2,24 @@
  * Created by ZhifengFang on 2017/6/8.
  */
 import React from 'react'
-import Nav from './component/nav'
+import Nav from './component/settingNav'
 import Http from '../http'
-
+import {Link} from 'react-router-dom'
 export default class Receive extends React.Component {
     constructor(props) {
         super(props)
-
         this.state = {
-            head: "",
-            petName: "",
-            tellphone: "",
-            flag: "getInfo"
+            addressInfo: []
         }
     }
 
     componentDidMount() {
-        Http.post("http://localhost:8080/MicroPower/SettingServlet", this.state, this.callBackFun.bind(this), this.error);
+        Http.post("http://localhost:8080/MicroPower/ShowAddressServlet", {flag:"receive"}, this.callBackFun.bind(this), this.error);
     }
 
     callBackFun(result) {
         this.setState({
-            head: result.head,
-            petName: result.petName,
-            tellphone: result.tellphone,
-            flag: "upload"
+            addressInfo:result
         })
         console.log(this.state)
     }
@@ -35,88 +28,46 @@ export default class Receive extends React.Component {
         alert("show setting errror");
     }
 
-    handlerChange(name, e) {
-        e.preventDefault()
-        if (name === "head") {
-            Http.post("http://localhost:8080/MicroPower/UploadImgServlet",
-                e.target,
-                this.callBackImg.bind(this),
-                this.error.bind(this)
-            );
-        } else if (name === "petName") {
-            this.setState({
-                petName: e.target.value
-            })
-        }
-    }
-
-    callBackImg(result) {
-        this.setState({
-            head: result.link
-        })
-    }
-
-    handleSubmit(e) {
-        e.preventDefault()
-        Http.post("http://localhost:8080/MicroPower/SettingServlet",
-            this.state,
-            this.callBackSubmit.bind(this),
-            this.error.bind(this)
-        );
-    }
-
-    callBackSubmit(result) {
-        if (result.flag === true) {
-            alert("修改成功！")
-        } else {
-            alert("修改失败！")
-        }
-    }
-
     render() {
+        let id=0
         return (
             <div className="item-setting">
                 <div className="container">
                     <h2 className="text-center">个人设置</h2>
                     <Nav/>
                     <hr/>
-                    <form onSubmit={this.handleSubmit.bind(this)}>
-                        <table>
-                            <tbody>
-                            <tr>
-                                <td className="col-md-3 head">头像</td>
-                                <td className="col-md-7">
-                                    <div className="user-avatar">
-                                        <img id="head_portrait" alt="" src={this.state.head}/>
-                                        <span>点击修改头像</span>
-                                    </div>
-                                    <div className="changeHead">
-                                        <input type="file" accept="image/jpeg,image/png,image/bmp"
-                                               onChange={this.handlerChange.bind(this, "head")}/>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td className="col-md-3 pet_cell">用户昵称</td>
-                                <td className="col-md-7">
-                                    <input className="form-control" type="text" value={this.state.petName}
-                                           onChange={this.handlerChange.bind(this, "petName")}/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td className="col-md-3 pet_cell">绑定手机号</td>
-                                <td className="col-md-7"><strong>{this.state.tellphone}</strong></td>
-                            </tr>
-                            <tr>
-                                <td className="col-md-3 pet_cell"></td>
-                                <td className="col-md-3 pet_cell">
-                                    <input className="setting" type="submit" value="保 存" style={{float: "left"}}/>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </form>
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td className="col-md-3 pet_cell">收件人姓名</td>
+                            <td className="col-md-3 pet_cell">详细地址</td>
+                            <td className="col-md-3 pet_cell">手机号</td>
+                            <td className="col-md-3 pet_cell"> 操作</td>
+                        </tr>
+                        {
+                            this.state.addressInfo.map(address => (
+                                <tr key={id++}>
+                                    <td className="col-md-3 pet_cell">{address.name}</td>
+                                    <td className="col-md-3 pet_cell">{address.detail}</td>
+                                    <td className="col-md-3 pet_cell">{address.cellphone}</td>
+                                    <td className="col-md-3 pet_cell"></td>
+                                </tr>
+                            ))
+                        }
+                        <tr>
+                            <td className="col-md-3 pet_cell"></td>
+                            <td className="col-md-3 pet_cell"></td>
+                            <td className="col-md-3 pet_cell"></td>
+                            <td className="col-md-3 pet_cell">
+                                <Link to="/my/add/receive">
+                                    <input className="button-green" type="button" value="添加收件地址"/>
+                                </Link>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
+                <hr/>
             </div>
         )
     }

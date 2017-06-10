@@ -148,7 +148,7 @@ export default class Donation extends React.Component {
             <div>
                 <div className="item">
                     <h2 className="text-center">我要捐赠</h2>
-                    <form className="form-horizontal publishForm">
+                    <form className="form-horizontal ">
                         <div id="baseform" className="form-container">
                             <Input htmlFor="捐赠标题" placeholder="填写捐赠标题"
                                    onChange={this.handleChange.bind(this, "title")}/>

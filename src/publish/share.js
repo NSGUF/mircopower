@@ -100,7 +100,7 @@ export default class Share extends React.Component {
             <div>
                 <div className="item">
                     <h2 className="text-center">分享见证</h2>
-                    <form className="form-horizontal publishForm">
+                    <form className="form-horizontal">
                         <div id="baseform" className="form-container">
                             <Input htmlFor="分享标题" placeholder="填写分享标题（150字以内）"
                                    onChange={this.handleChange.bind(this, "title")}/>

@@ -50,7 +50,7 @@ export default class Donation extends React.Component {
                         {this.props.project.select_need_or_dona === 1 ? "我要捐赠" : "求助捐赠"}
                     </div>
                 </div>
-                <form className=" publishForm user-info" onSubmit={this.handleSubmit.bind(this)}>
+                <form className="user-info" onSubmit={this.handleSubmit.bind(this)}>
                     <input className="btn btn-primary btn-lg large btn-delete" type="submit" value="删除"/>
                     <Link className="btn btn-primary btn-lg large btn-delete"
                           to={link}>查看项目</Link>

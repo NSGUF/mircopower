@@ -4,6 +4,8 @@
 import React from 'react';
 import LiItem from './foot/liItem'
 import IsLogin from './index/isLogin';
+import {Link} from 'react-router-dom'
+
 export default class Mine extends React.Component {
     render() {
         let mines = [
@@ -28,8 +30,8 @@ export default class Mine extends React.Component {
                     <div className="container">
                         <div className="top-nav">
                             <div className="logo">
-                                <a href="index">
-                                    <img src="images/logo.png" className="img-responsive" alt=""/></a>
+                                <Link to="/">
+                                    <img src="images/logo.png" className="img-responsive" alt="主页"/></Link>
                             </div>
                             <ul id="nav">
                                 {mines.map((mine)=>(

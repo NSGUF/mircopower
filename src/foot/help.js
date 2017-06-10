@@ -31,6 +31,7 @@ const Help = () => (
                 <li><a href="">助力成功后会收费吗</a></li>
             </ul>
         </div>
+        <hr/>
     </div>
 )
 export default Help

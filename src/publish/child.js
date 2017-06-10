@@ -134,7 +134,7 @@ export default class Child extends React.Component {
             <div>
                 <div className="item">
                     <h2 className="text-center">助力儿童</h2>
-                    <form className="form-horizontal publishForm">
+                    <form className="form-horizontal ">
                         <div id="baseform" className="form-container">
                             <Input htmlFor="目标金额" placeholder="您想要筹多少钱？2000以内"
                                    onChange={this.handleChange.bind(this, "amount")}/>

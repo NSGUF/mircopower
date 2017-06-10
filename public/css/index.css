@@ -1071,9 +1071,16 @@ a.mask.zoom-img {
 }
 
 .item-setting {
-    padding-top: 120px;
+    padding-top: 80px;
     text-align: left;
     padding-bottom: 40px;
+}
+
+.item-setting h2 {
+    font-size: 2em;
+    color: #43ac43;;
+    font-family: 'MontserratAlternates-Regular';
+    text-align: center;
 }
 
 .item-setting .container table {
@@ -1186,4 +1193,57 @@ a.mask.zoom-img {
 
 .user-info {
     float: left;
+}
+
+.button-green {
+    background: #009900;
+    line-height: 32px;
+    width: 150px;
+    border-radius: 50px;
+    border: 1px solid;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.publishForm {
+    border: #CCCCCC 1px solid;
+    height: 600px;
+}
+
+.form-group-lg {
+    margin-bottom: 30px;
+}
+
+.select {
+    width: 180px;
+    height: 40px;
+    margin-right: 5px;
+}
+
+.control-label {
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.right-btn {
+    position: absolute;
+    left: 450px;
+    top: 20px;
+}
+
+.left-btn {
+    position: absolute;
+    left: 250px;
+    top: 20px;
+}
+
+.add-receive-item {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+}
+
+.add-receive-form{
+    padding:10px;
+    height:500px;
 }

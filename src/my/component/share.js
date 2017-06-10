@@ -47,7 +47,7 @@ export default class Share extends React.Component {
                     <div className="bigger">{this.props.project.title}</div>
                     <div className="time">{this.props.project.open_date}</div>
                 </div>
-                <form className=" publishForm user-info" onSubmit={this.handleSubmit.bind(this)}>
+                <form className="user-info" onSubmit={this.handleSubmit.bind(this)}>
                     <input className="btn btn-primary btn-lg large btn-delete" type="submit" value="删除"/>
                     <Link className="btn btn-primary btn-lg large btn-delete"
                           to={link}>查看项目</Link>

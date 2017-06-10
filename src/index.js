@@ -32,6 +32,8 @@ import HelpDetail from './show/helpDetail'
 import DonationDetail from './show/donationDetail'
 import ShareDetail from './show/shareDetail'
 import MyProjects from './my/projects'
+import AddReceive from './my/addReceive'
+import Receive from './my/receive'
 
 var footInfo = [
     {infoHead: "信息", infoDetail: [{infoLink: "http://jwc.jxnu.edu.cn", infoName: "江西师范大学"}]},
@@ -97,6 +99,8 @@ ReactDOM.render(
                 <Route path="/app" component={AppLoad}/>
                 <Route path="/my/setting" component={Setting}/>
                 <Route path="/my/projects" component={MyProjects}/>
+                <Route path="/my/add/receive" component={AddReceive}/>
+                <Route path="/my/receive" component={Receive}/>
             </Index>
         </HashRouter>
     ), document.getElementById('root'));
