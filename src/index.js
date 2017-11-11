@@ -32,9 +32,17 @@ import HelpDetail from './show/helpDetail'
 import DonationDetail from './show/donationDetail'
 import ShareDetail from './show/shareDetail'
 import MyProjects from './my/projects'
+import MySuccess from './my/success'
+import MyGoing from './my/going'
+import MyFail from './my/fail'
 import AddReceive from './my/addReceive'
 import Receive from './my/receive'
 import Quit from './quit'
+import Volunteer from './my/volunteer'
+import AddVolunteer from './my/addVolunteer'
+import Http from './http'
+
+
 
 var footInfo = [
     {infoHead: "信息", infoDetail: [{infoLink: "http://jwc.jxnu.edu.cn", infoName: "江西师范大学"}]},
@@ -58,7 +66,7 @@ var footInfo = [
             {infoLink: "/foot/media", infoName: "媒体报道"}]
     },
 ];
-var source = "http://localhost:8080/MicroPower/IsLoginServlet";
+var source = Http.URL+"/MicroPower/IsLoginServlet";
 
 class Index extends React.Component {
     render() {
@@ -100,9 +108,15 @@ ReactDOM.render(
                 <Route path="/app" component={AppLoad}/>
                 <Route path="/my/setting" component={Setting}/>
                 <Route path="/my/projects" component={MyProjects}/>
+                <Route path="/my/success" component={MySuccess}/>
+                <Route path="/my/fail" component={MyFail}/>
+                <Route path="/my/going" component={MyGoing}/>
                 <Route path="/my/add/receive" component={AddReceive}/>
                 <Route path="/my/receive" component={Receive}/>
+                <Route path="/my/volunteer" component={Volunteer}/>
+                <Route path="/my/add/volunteer" component={AddVolunteer}/>
                 <Route path="/quit" component={Quit}/>
             </Index>
+
         </HashRouter>
     ), document.getElementById('root'));

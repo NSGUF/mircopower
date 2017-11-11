@@ -17,7 +17,7 @@ export default class Better extends React.Component {
 
     componentDidMount() {
 
-        Http.post("http://localhost:8080/MicroPower/ShowServlet", {flag: "share"}, this.callBackFun.bind(this), this.error);
+        Http.post(Http.URL+"/MicroPower/ShowServlet", {flag: "share"}, this.callBackFun.bind(this), this.error);
     }
 
     callBackFun(result) {

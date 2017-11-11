@@ -14,12 +14,12 @@ export default class Receive extends React.Component {
     }
 
     componentDidMount() {
-        Http.post("http://localhost:8080/MicroPower/ShowAddressServlet", {flag:"receive"}, this.callBackFun.bind(this), this.error);
+        Http.post(Http.URL+"/MicroPower/ShowAddressServlet", {flag: "receive"}, this.callBackFun.bind(this), this.error);
     }
 
     callBackFun(result) {
         this.setState({
-            addressInfo:result
+            addressInfo: result
         })
         console.log(this.state)
     }
@@ -29,7 +29,7 @@ export default class Receive extends React.Component {
     }
 
     render() {
-        let id=0
+        let id = 0
         return (
             <div className="item-setting">
                 <div className="container">
@@ -38,12 +38,17 @@ export default class Receive extends React.Component {
                     <hr/>
                     <table>
                         <tbody>
-                        <tr>
-                            <td className="col-md-3 pet_cell">收件人姓名</td>
-                            <td className="col-md-3 pet_cell">详细地址</td>
-                            <td className="col-md-3 pet_cell">手机号</td>
-                            <td className="col-md-3 pet_cell"> 操作</td>
-                        </tr>
+                        {
+                            this.state.addressInfo.length !== 0 ?
+                                (
+                                    <tr>
+                                        <td className="col-md-3 pet_cell">收件人姓名</td>
+                                        <td className="col-md-3 pet_cell">详细地址</td>
+                                        <td className="col-md-3 pet_cell">手机号</td>
+                                        <td className="col-md-3 pet_cell"> 操作</td>
+                                    </tr>
+                                ) : ""
+                        }
                         {
                             this.state.addressInfo.map(address => (
                                 <tr key={id++}>

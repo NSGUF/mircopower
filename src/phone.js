@@ -15,6 +15,8 @@ export default class Phone extends React.Component {
             tellphone: "",
             fillValidate: ""
         }
+
+
     }
 
     createValidateCode(name) {
@@ -43,7 +45,7 @@ export default class Phone extends React.Component {
                 break;
             case "validate":
                 if (this.state.code === this.state.fillCode) {
-                    Http.post("http://localhost:8080/MicroPower/SendServlet",
+                    Http.post(Http.URL+"/MicroPower/SendServlet",
                         {tellphone: this.state.tellphone, validate: this.state.validate},
                         this.callBack.bind(this),
                         this.error)
@@ -52,34 +54,37 @@ export default class Phone extends React.Component {
                 }
                 break;
             case "login":
-                if (/^1[3|4|5|7|8][0-9]{9}$/.test(this.state.tellphone)) {
+                if (!/^1[3|4|5|7|8][0-9]{9}$/.test(this.state.tellphone)) {
                     alert("手机号码格式不正确！")
-                } else if (this.state.validate === this.state.fillValidate) {
-                    alert("登录成功")
-                    this.props.history.push("/index")
-                } else {
-                    alert("验证码输入错误")
+                } else{
+                    if (this.state.validate === this.state.fillValidate) {
+                        Http.post(Http.URL+"/MicroPower/LoginServlet",
+                            {tellphone: this.state.tellphone},
+                            this.callBackLogin.bind(this),
+                            this.error)
+                    } else {
+                        alert("验证码输入错误")
+                    }
                 }
                 break;
             default:
                 alert("handlerClick error")
+                break
         }
 
-        console
-            .log(
-                this
-                    .state
-            )
+        console.log(this.state)
+    }
+
+    callBackLogin(result) {
+        alert("登录成功")
+        location.reload('/')
+        this.props.history.push("/")
     }
 
     callBack(result) {
         console.log(result.flag)
         console.log(typeof result.flag)
-        if (result.flag === "100") {
-            alert("验证码发送成功！")
-        } else {
-            alert("请重新发送验证码！")
-        }
+        alert("验证码发送成功！")
     }
 
     error() {

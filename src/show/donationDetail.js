@@ -23,7 +23,7 @@ export default class DonationDetail extends React.Component {
     }
 
     componentDidMount() {
-        Http.post("http://localhost:8080/MicroPower/DetailServlet", {
+        Http.post(Http.URL+"/MicroPower/DetailServlet", {
             flag: "donation",
             id: this.props.match.params.id
         }, this.callBackFun.bind(this), this.error);
@@ -86,16 +86,15 @@ export default class DonationDetail extends React.Component {
                                     <p>&nbsp;</p>
                                     <hr/>
                                 </div>
-                                <div className="item1">
+                                {/*<div className="item1">
                                     <img src="images/erweima.png" alt="支持"
                                          width="130" height="130"/>
                                     <div className="itemsun">
                                         <h3>
-                                            扫描左侧二维码 <br/>
-                                            <a href="" className="text-success">帮助TA</a>
+                                            扫描左侧二维码<br/>帮助TA
                                         </h3>
                                     </div>
-                                </div>
+                                </div>*/}
                             </div>
                         </div>
                         <div className="col-md-8">
@@ -108,7 +107,7 @@ export default class DonationDetail extends React.Component {
                                 ))}
                                 <hr/>
                                 <div className="itemskills">
-                                    <p>筹款动态</p>
+                                    <p>评论动态</p>
                                     <hr/>
                                     <p className="text-center">没有了更多了~~~</p>
                                 </div>

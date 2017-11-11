@@ -2,16 +2,27 @@
  * Created by ZhifengFang on 2017/6/10.
  */
 import React from 'react'
+import {  Redirect } from 'react-router'
 import Http from './http'
+
 export default class Quit extends React.Component {
+    constructor(props){
+        super(props)
+        this.state={
+            flag:false
+        }
+    }
     componentDidMount() {
-        Http.post("http://localhost:8080/MicroPower/QuitServlet", {},
+        Http.post(Http.URL+"/MicroPower/QuitServlet", {},
             this.callback.bind(this), this.error)
     }
 
     callback(result) {
-        if (result.flag)
-            this.props.history.push("/phone")
+        this.setState({
+            flag:result.flag
+        })
+
+        location.reload('/phone')
     }
 
     error() {
@@ -19,6 +30,11 @@ export default class Quit extends React.Component {
     }
 
     render() {
+        if(this.state.flag){
+            return(
+                <Redirect to="/phone"/>
+            )
+        }
         return (
             <div></div>
         )

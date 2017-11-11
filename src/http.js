@@ -11,25 +11,7 @@
                 : "Msxml2.XMLHTTP");
         };
     }
-    http.getHash = function (n) {
-        var m = window.location.hash.match(new RegExp('(?:#|&)' + n
-            + '=([^&]*)(&|$)')), result = !m ? ''
-            : decodeURIComponent(m[1]);
-        return result || http.getParameterByName(n);
-    };
-
-    http.getParameterByName = function (n, url) {
-        var m, result, search;
-        if (url) {
-            m = url.match(/\?[^#]+/);
-            search = !m ? '' : m[0];
-        } else {
-            search = window.location.search;
-        }
-        m = search.match(new RegExp('(?:\\?|&)' + n + '=([^&]*)(&|$)'));
-        result = !m ? '' : decodeURIComponent(m[1]);
-        return result;
-    };
+    http.URL='http://localhost:8080'
     http.post = function (url, data, callback, error) {
         if (typeof data === "function") {
             callback = data;

@@ -32,15 +32,16 @@ export default class Child extends React.Component {
             alert("请输入详情!")
         } else if (this.state.links.length === 0) {
             alert("至少选择一张图片!")
-        }
-        e.preventDefault()
-        Http.post("http://localhost:8080/MicroPower/ChildServlet",
-            this.state,
-            this.callBackFun.bind(this),
-            this.error.bind(this)
-        );
+        } else {
+            e.preventDefault()
+            Http.post(Http.URL + "/MicroPower/ChildServlet",
+                this.state,
+                this.callBackFun.bind(this),
+                this.error.bind(this)
+            );
 
-        console.log(this.state)
+            console.log(this.state)
+        }
     }
 
     handleChange(name, e) {
@@ -86,7 +87,7 @@ export default class Child extends React.Component {
                 break;
             case "img":
                 e.preventDefault()
-                Http.post("http://localhost:8080/MicroPower/UploadImgServlet",
+                Http.post(Http.URL + "/MicroPower/UploadImgServlet",
                     e.target,
                     this.callBackImg.bind(this),
                     this.error.bind(this)
@@ -102,7 +103,7 @@ export default class Child extends React.Component {
     callBackFun(result) {
         if (result.flag === true) {
             this.props.history.push("/finish")
-        }else{
+        } else {
             alert("发布失败！")
         }
     }

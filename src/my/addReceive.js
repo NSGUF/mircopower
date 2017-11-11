@@ -4,6 +4,7 @@
 import React from 'react'
 import Http from '../http'
 import {Link} from 'react-router-dom'
+
 export default class AddReceive extends React.Component {
     constructor(props) {
         super(props)
@@ -694,22 +695,23 @@ export default class AddReceive extends React.Component {
             alert("请选择县区!")
         } else if (this.state.detail === "") {
             alert("请输入详细地址")
+        } else {
+            e.preventDefault()
+            let info = {
+                name: this.state.name,
+                cellphone: this.state.cellphone,
+                province: this.state.province,
+                city: this.state.city,
+                county: this.state.county,
+                detail: this.state.detail
+            }
+            Http.post(Http.URL + "/MicroPower/AddReceiveServlet",
+                info,
+                this.callBackFun.bind(this),
+                this.error.bind(this)
+            );
+            console.log(this.state)
         }
-        e.preventDefault()
-        let info = {
-            name: this.state.name,
-            cellphone: this.state.cellphone,
-            province: this.state.province,
-            city: this.state.city,
-            county: this.state.county,
-            detail: this.state.detail
-        }
-        Http.post("http://localhost:8080/MicroPower/AddReceiveServlet",
-            info,
-            this.callBackFun.bind(this),
-            this.error.bind(this)
-        );
-        console.log(this.state)
     }
 
     handleChange(name, e) {
@@ -739,14 +741,15 @@ export default class AddReceive extends React.Component {
                 this.setState({
                     province: e.target.value,
                     cities: this.getCity(e.target.value),
-                    city:this.getCity(e.target.value)[0]
+                    city: this.getCity(e.target.value)[0],
+                    counties: this.getCounty(e.target.value, this.getCity(e.target.value)[0])
                 });
                 break;
             case "city":
                 this.setState({
                     city: e.target.value,
                     counties: this.getCounty(this.state.province, e.target.value),
-                    county:this.getCounty(this.state.province, e.target.value)[0]
+                    county: this.getCounty(this.state.province, e.target.value)[0]
                 });
                 break;
             case "county":

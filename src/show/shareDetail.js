@@ -20,7 +20,7 @@ export default class ShareDetail extends React.Component {
     }
 
     componentDidMount() {
-        Http.post("http://localhost:8080/MicroPower/DetailServlet", {
+        Http.post(Http.URL+"/MicroPower/DetailServlet", {
             flag: "share",
             id: this.props.match.params.id
         }, this.callBackFun.bind(this), this.error);
@@ -83,7 +83,7 @@ export default class ShareDetail extends React.Component {
                                 ))}
                                 <hr/>
                                 <div className="itemskills">
-                                    <p>筹款动态</p>
+                                    <p>评论动态</p>
                                     <hr/>
                                     <p className="text-center">没有了更多了~~~</p>
                                 </div>

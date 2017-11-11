@@ -25,7 +25,7 @@ export default class ProjectItem extends React.Component {
                                     物品分类....................................................{this.props.project.raise_goods}
                                 </p>
                                 <p>
-                                    {this.props.project.select_need_or_dona ? "我要捐赠" : "求助捐赠"} 已有<strong>0</strong>人评价
+                                    {this.props.project.select_need_or_dona===1 ? "我要捐赠" : "求助捐赠"} 已有<strong>0</strong>人评价
                                 </p>
                             </div>
                         </Link>

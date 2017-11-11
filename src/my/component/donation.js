@@ -17,7 +17,7 @@ export default class Donation extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        Http.post("http://localhost:8080/MicroPower/DeleteServlet", this.state, this.callBack.bind(this), this.error)
+        Http.post(Http.URL+"/MicroPower/DeleteServlet", this.state, this.callBack.bind(this), this.error)
     }
 
     callBack(result) {

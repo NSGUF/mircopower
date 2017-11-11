@@ -18,7 +18,7 @@ export default class Setting extends React.Component {
     }
 
     componentDidMount() {
-        Http.post("http://localhost:8080/MicroPower/SettingServlet", this.state, this.callBackFun.bind(this), this.error);
+        Http.post(Http.URL+"/MicroPower/SettingServlet", this.state, this.callBackFun.bind(this), this.error);
     }
 
     callBackFun(result) {
@@ -38,7 +38,7 @@ export default class Setting extends React.Component {
     handlerChange(name, e) {
         e.preventDefault()
         if (name === "head") {
-            Http.post("http://localhost:8080/MicroPower/UploadImgServlet",
+            Http.post(Http.URL+"/MicroPower/UploadImgServlet",
                 e.target,
                 this.callBackImg.bind(this),
                 this.error.bind(this)
@@ -54,11 +54,12 @@ export default class Setting extends React.Component {
         this.setState({
             head: result.link
         })
+
     }
 
     handleSubmit(e) {
         e.preventDefault()
-        Http.post("http://localhost:8080/MicroPower/SettingServlet",
+        Http.post(Http.URL+"/MicroPower/SettingServlet",
             this.state,
             this.callBackSubmit.bind(this),
             this.error.bind(this)
@@ -68,6 +69,7 @@ export default class Setting extends React.Component {
     callBackSubmit(result) {
         if (result.flag === true) {
             alert("修改成功！")
+            location.reload('/')
         } else {
             alert("修改失败！")
         }
@@ -87,7 +89,7 @@ export default class Setting extends React.Component {
                                 <td className="col-md-3 head">头像</td>
                                 <td className="col-md-7">
                                     <div className="user-avatar">
-                                        <img id="head_portrait" alt="" src={this.state.head}/>
+                                        <img id="head_portrait" alt="" src={this.state.head} />
                                         <span>点击修改头像</span>
                                     </div>
                                     <div className="changeHead">

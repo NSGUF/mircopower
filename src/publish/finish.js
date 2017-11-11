@@ -2,7 +2,7 @@
  * Created by Administrator on 2017/5/27.
  */
 import React from 'react'
-
+import {Link} from 'react-router-dom'
 export default class Finish extends React.Component{
 
     render(){
@@ -16,8 +16,7 @@ export default class Finish extends React.Component{
                     </div>
                     <div className="Login_other finish_other">
                         <ul>
-                            <li><a href="" target="_self">查看项目</a></li>
-                            <li><a href="">项目验证</a></li>
+                            <li><Link to="/my/projects">查看项目</Link></li>
                         </ul>
                     </div>
                 </div>

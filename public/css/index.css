@@ -505,6 +505,7 @@ a:hover {
     margin-top: 50px;
     text-align: center;
     color: #080808;
+    cursor:hand;
 }
 
 .publish-center {
@@ -590,14 +591,13 @@ a:hover {
     margin-left: 0px;
     width: 120px;
     height: 120px;
-    position: relative;
-    overflow: hidden;
 }
 
 .user-avatar img {
     border: none;
     position: absolute;
-    margin-left: -60px;
+    width:120px;
+    height:120px;
 }
 
 .changeHead {
@@ -630,12 +630,10 @@ a:hover {
 }
 
 .Login_other {
-    margin-top: 20px;
+    margin: 0px auto;
+    width: 216px;
 }
 
-.finish_other {
-    margin-left: 380px;
-}
 
 .Login_other ul li a {
     margin-right: 30px;
@@ -1096,7 +1094,7 @@ a.mask.zoom-img {
 
 .item-setting .container hr {
     margin-top: 60px;
-    width: 720px;
+    width: 820px;
 }
 
 .item-setting .container h2 {
@@ -1121,8 +1119,8 @@ a.mask.zoom-img {
 
 .user-avatar span {
     position: relative;
-    left: -120px;
-    top: 78px;
+    left: 10px;
+    top: 130px;
     color: #6f7a7e;
     width: 120px;
 }
@@ -1172,7 +1170,9 @@ a.mask.zoom-img {
     margin-left: 10px;
     margin-top: 5px;
 }
-
+.top-nav{
+    height: 20px;
+}
 .bigger {
     font-size: 20px;
     display: inline;
@@ -1246,4 +1246,7 @@ a.mask.zoom-img {
 .add-receive-form{
     padding:10px;
     height:500px;
+}
+.tr-id{
+
 }

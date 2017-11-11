@@ -18,12 +18,13 @@ export default class HelpDetail extends React.Component {
             support_time: "",
             describe: "",
             image: "",
-            content: []
+            content: [],
+            payImg:''
         }
     }
 
     componentDidMount() {
-        Http.post("http://localhost:8080/MicroPower/DetailServlet", {
+        Http.post(Http.URL+"/MicroPower/DetailServlet", {
             flag: "help",
             id: this.props.match.params.id
         }, this.callBackFun.bind(this), this.error);
@@ -39,7 +40,8 @@ export default class HelpDetail extends React.Component {
             raise_amount: result.raise_amount,
             support_time: result.support_time,
             describe: result.describe,
-            image: result.image
+            image: result.image,
+            payImg:result.payImg
         })
         console.log(this.state);
     }
@@ -89,12 +91,11 @@ export default class HelpDetail extends React.Component {
                                     <hr/>
                                 </div>
                                 <div className="item1">
-                                    <img src="images/erweima.png" alt="支持"
+                                    <img src={this.state.payImg} alt={this.state.title}
                                          width="130" height="130"/>
                                     <div className="itemsun">
                                         <h3>
-                                            扫描左侧二维码 <br/>
-                                            <a href="" className="text-success">帮助TA</a>
+                                            扫描左侧二维码 <br/>帮助TA
                                         </h3>
                                     </div>
                                 </div>

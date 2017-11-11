@@ -24,7 +24,7 @@ export default class Setting extends React.Component {
             alert("请先登录！")
             this.props.history.push("/phone")
         } else {
-            Http.post(Http.URL+"/MicroPower/MyProjectsServlet", {flag: "help"}, this.callBackHelp.bind(this), this.error);
+            Http.post(Http.URL+"/MicroPower/MyFail", {flag: "help"}, this.callBackHelp.bind(this), this.error);
         }
     }
 
@@ -39,7 +39,7 @@ export default class Setting extends React.Component {
         })
         console.log(this.state.helpProjects)
 
-        Http.post(Http.URL+"/MicroPower/MyProjectsServlet", {flag: "donation"}, this.callBackDonation.bind(this), this.error);
+        Http.post(Http.URL+"/MicroPower/MyFail", {flag: "donation"}, this.callBackDonation.bind(this), this.error);
     }
 
     callBackDonation(result) {
@@ -49,7 +49,7 @@ export default class Setting extends React.Component {
         })
         console.log(this.state.donationProjects)
 
-        Http.post(Http.URL+"/MicroPower/MyProjectsServlet", {flag: "share"}, this.callBackShare.bind(this), this.error);
+        Http.post(Http.URL+"/MicroPower/MyFail", {flag: "share"}, this.callBackShare.bind(this), this.error);
     }
 
     callBackShare(result) {

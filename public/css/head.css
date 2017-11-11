@@ -127,9 +127,8 @@
 }
 
 .copyright {
-    padding: 1em 0em;
     background: #F1F2F2;
-    min-height: 48px;
+    min-height: 30px;
 }
 
 .copy-main p {

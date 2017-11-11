@@ -15,7 +15,7 @@ export default class ProjectItem extends React.Component {
                             <img src={this.props.project.image.split(" ")[0]} alt={this.props.project.title}/>
                             <div className="upload">
                                 <div className="mypeople">
-                                    <img classNameName="img-circle" src={this.props.project.user_head} alt="用户名"/>
+                                    <img className="img-circle" src={this.props.project.user_head} alt="用户名"/>
                                     <p>
                                         {this.props.project.user_name}<span>{this.props.project.open_date}</span>
                                     </p>

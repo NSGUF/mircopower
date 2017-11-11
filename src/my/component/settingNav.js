@@ -14,6 +14,9 @@ export default class SettingNav extends React.Component {
             }, {
                 infoLink: '/my/receive',
                 infoName: '收件地址'
+            }, {
+                infoLink: '/my/volunteer',
+                infoName: '志愿者'
             }
         ]
         return (

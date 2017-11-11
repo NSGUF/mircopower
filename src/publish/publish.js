@@ -3,8 +3,57 @@
  */
 import React from 'react'
 import {Link} from 'react-router-dom'
+import Http from '../http'
 
 export default class Publish extends React.Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            is_volunteer: false
+        }
+
+    }
+
+    componentDidMount() {
+        Http.post(Http.URL+"/MicroPower/IsLoginServlet", {}, this.callBackLogin.bind(this), this.error);
+
+    }
+
+    callBackLogin(result) {
+        if (result.flag === false) {
+            alert("请先登录！")
+            this.props.history.push("/phone")
+        } else {
+            Http.post(Http.URL+"/MicroPower/IsVolunteerServlet", {}, this.callBackFun.bind(this), this.error);
+        }
+    }
+
+    callBackFun(result) {
+        this.setState({
+            is_volunteer: result.flag === 3 ? true : false
+        })
+    }
+
+    handleClick() {
+        if (this.state.is_volunteer === true) {
+            this.props.history.push("/child")
+        } else {
+            alert("请先审核！")
+            this.props.history.push("/my/volunteer")
+        }
+    }
+    handleShareClick() {
+        if (this.state.is_volunteer === true) {
+            this.props.history.push("/share")
+        } else {
+            alert("请先审核！")
+            this.props.history.push("/my/volunteer")
+        }
+    }
+    getStyles() {
+        return {cursor:'pointer'};
+    }
 
     render() {
         return (
@@ -17,7 +66,7 @@ export default class Publish extends React.Component {
                     <div className="item-drop">
                         <img src="images/publish/help.png" alt="一对一助力儿童" width="80px"/><br />
                         <p>
-                            <Link to="/child">助力儿童</Link>
+                            <span style={this.getStyles()}  onClick={this.handleClick.bind(this)}>助力儿童</span>
                         </p>
                     </div>
                     <div className="item-drop">
@@ -35,7 +84,7 @@ export default class Publish extends React.Component {
                     <div className="item-drop">
                         <img src="images/publish/share.png" alt="分享见证" width="80px"/><br />
                         <p>
-                            <Link to="/share">分享见证</Link>
+                            <span style={this.getStyles()} onClick={this.handleShareClick.bind(this)}>分享见证</span>
                         </p>
                     </div>
                 </div>

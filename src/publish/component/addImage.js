@@ -23,7 +23,6 @@ export default class AddImage extends React.Component {
                                                onChange={this.props.onChange}/>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
